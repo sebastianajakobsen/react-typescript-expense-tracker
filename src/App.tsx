@@ -7,21 +7,21 @@ import TransactionForm from "./Components/TransactionForm";
 const App:React.FC = () => {
 
     const [transactions, setTransactions] = useState<Transaction[]>([
-        // {
-        //     id:1,
-        //     text:"Salary",
-        //     amount:3000,
-        // },
-        // {
-        //     id:2,
-        //     text:"Food",
-        //     amount:-600,
-        // },
-        // {
-        //     id:3,
-        //     text:"Computer Parts",
-        //     amount:-1000,
-        // },
+        {
+            id:1,
+            text:"Salary",
+            amount:3000,
+        },
+        {
+            id:2,
+            text:"Food",
+            amount:-600,
+        },
+        {
+            id:3,
+            text:"Computer Parts",
+            amount:-1000,
+        },
     ])
 
     const addTransaction = (newTransaction:Transaction) => {
