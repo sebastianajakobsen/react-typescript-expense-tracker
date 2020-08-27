@@ -14,7 +14,7 @@ const TransactionForm: React.FC<Props> = ({addTransaction}) => {
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        addTransaction({...newTransaction, id:123123})
+        addTransaction({...newTransaction, id: Math.floor(Math.random() * 100000)})
     }
 
     const handleInputTextChange = (e:React.ChangeEvent<HTMLInputElement>) => {
