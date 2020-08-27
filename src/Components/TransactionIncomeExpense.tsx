@@ -7,8 +7,9 @@ interface Props {
 const TransactionIncomeExpense:React.FC<Props> = ({transactions}) => {
 
     const amounts = transactions.map(transaction => transaction.amount);
-    const income = amounts.filter(function (a) { return a >= 0; }).reduce(function (a, b) { return a + b; });
-    const expense = amounts.filter(function (a) { return a <= 0; }).reduce(function (a, b) { return a + b; });
+    const income = amounts.filter(function (a) { return a >= 0; }).reduce(function (a, b) { return a + b; }, 0);
+    const expense = amounts.filter(function (a) { return a <= 0; }).reduce(function (a, b) { return a + b; }, 0);
+
 
 
     return (

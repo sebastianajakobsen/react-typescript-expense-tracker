@@ -1,16 +1,18 @@
 import React from 'react';
 
 interface Props {
-    transactions:Transaction[]
+    transactions: Transaction[]
 }
 
-const TransactionBalance:React.FC<Props> = ({transactions}) => {
+const TransactionBalance: React.FC<Props> = ({transactions}) => {
 
     const amounts = transactions.map(transactions => transactions.amount);
-    const income = amounts.filter(function (a) { return a >= 0; }).reduce(function (a, b) { return a + b; });
-    const expense = amounts.filter(function (a) { return a <= 0; }).reduce(function (a, b) { return a + b; });
+    const income = amounts.filter(function (a) { return a >= 0; }).reduce(function (a, b) { return a + b; }, 0);
+    const expense = amounts.filter(function (a) { return a <= 0; }).reduce(function (a, b) { return a + b; }, 0);
 
     const balance = income - Math.abs(expense);
+
+
 
     return (
         <div>
