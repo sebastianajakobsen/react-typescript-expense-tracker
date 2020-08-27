@@ -4,17 +4,20 @@ interface Props {
     addTransaction:(addTransaction:Transaction) => void;
 }
 
+const initialState = {
+    id:1,
+    text:"",
+    amount:0
+};
+
 const TransactionForm: React.FC<Props> = ({addTransaction}) => {
 
-    const [newTransaction, setNewTransaction] = useState<Transaction>({
-        id:1,
-        text:"",
-        amount:0
-    })
+    const [newTransaction, setNewTransaction] = useState<Transaction>(initialState)
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         addTransaction({...newTransaction, id: Math.floor(Math.random() * 100000)})
+        setNewTransaction({...initialState})
     }
 
     const handleInputTextChange = (e:React.ChangeEvent<HTMLInputElement>) => {
