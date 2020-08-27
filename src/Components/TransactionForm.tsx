@@ -17,7 +17,7 @@ const TransactionForm: React.FC<Props> = ({addTransaction}) => {
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         addTransaction({...newTransaction, id: Math.floor(Math.random() * 100000)})
-        setNewTransaction({...initialState})
+        setNewTransaction(initialState)
     }
 
     const handleInputTextChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ const TransactionForm: React.FC<Props> = ({addTransaction}) => {
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="text">
                     Text
                 </label>
-                <input onChange={handleInputTextChange}
+                <input onChange={handleInputTextChange} value={newTransaction.text}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="text" type="text" placeholder="Enter text..." />
             </div>
@@ -44,7 +44,7 @@ const TransactionForm: React.FC<Props> = ({addTransaction}) => {
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="amount">
                     Amount (negative - expense, positive - income)
                 </label>
-                <input onChange={handleInputAmountChange}
+                <input onChange={handleInputAmountChange} value={newTransaction.amount}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="amount" type="number" placeholder="Enter amount..." />
             </div>
