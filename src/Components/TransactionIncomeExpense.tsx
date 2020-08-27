@@ -10,8 +10,6 @@ const TransactionIncomeExpense:React.FC<Props> = ({transactions}) => {
     const income = amounts.filter(function (a) { return a >= 0; }).reduce(function (a, b) { return a + b; }, 0);
     const expense = amounts.filter(function (a) { return a <= 0; }).reduce(function (a, b) { return a + b; }, 0);
 
-
-
     return (
         <div className="flex justify-between p-6 bg-white shadow-md my-6 ">
             <div className="flex-1 text-center border-r-2 font-medium">
