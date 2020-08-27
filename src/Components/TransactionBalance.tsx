@@ -11,9 +11,6 @@ const TransactionBalance: React.FC<Props> = ({transactions}) => {
     const expense = amounts.filter(function (a) { return a <= 0; }).reduce(function (a, b) { return a + b; }, 0);
 
     const balance = income - Math.abs(expense);
-
-
-
     return (
         <div>
             <h4 className="text-2xl font-medium">Your Balance</h4>
