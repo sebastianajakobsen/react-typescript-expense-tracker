@@ -15,11 +15,11 @@ const TransactionIncomeExpense:React.FC<Props> = ({transactions}) => {
         <div className="flex justify-between p-6 bg-white shadow-md my-6 ">
             <div className="flex-1 text-center border-r-2 font-medium">
                 <h4>Income</h4>
-                <p className="text-green-400">${income}</p>
+                <p className="text-green-600">${income}</p>
             </div>
             <div className="flex-1 text-center font-medium">
                 <h4>Expense</h4>
-                <p className="text-red-400">${expense}</p>
+                <p className="text-red-600">${expense}</p>
             </div>
         </div>
     );

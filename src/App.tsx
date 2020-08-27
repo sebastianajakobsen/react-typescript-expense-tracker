@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TransactionIncomeExpense from "./Components/TransactionIncomeExpense";
 import TransactionBalance from "./Components/TransactionBalance";
+import TransactionHistory from "./Components/TransactionHistory";
 
 const App:React.FC = () => {
 
@@ -27,6 +28,7 @@ const App:React.FC = () => {
             <h1 className="text-center text-2xl font-bold">Expense Tracker </h1>
             <TransactionBalance transactions={transactions}  />
             <TransactionIncomeExpense transactions={transactions}/>
+            <TransactionHistory transactions={transactions} />
         </div>
     );
 };
